@@ -4,10 +4,12 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    color: #fff;
 }
 
 body {
     background-color: #000;
+    box-shadow: inset 0 0 200px #000000e5;
 }
 
 ::-webkit-scrollbar {
@@ -23,38 +25,69 @@ body {
     border-radius: 5px;
 }
 
+nav {
+    background: #4d236e;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+    margin: 15px 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+li a {
+    text-decoration: none;
+}
+
 .main-bg {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../assets/wallpapers/main-wp.jpg);
+    background: url(../assets/wallpapers/purple-bg.jpg);
     background-size: cover;
     z-index: -1;
     opacity: 0.5;
 }
 
-.main {
-    width: 100%;
-    height: 700px;
+.presents {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     position: relative;
 }
 
-.presents-title {
-    text-align: center;
-    color: #fff;
-}
-
-.presents-title h1 {
+.presents h1 {
     font-size: 3rem;
 }
 
-.presents-title p {
+.presents p {
     font-size: 1.5rem;
 }
 
-.presents-container {
+.about {
+    height: 600px;
+    background: #4d236e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,16 +95,16 @@ body {
     font-size: 1.2rem;
 }
 
-.presents-container .__photo {
+.about__container .__photo {
     background: url(../assets/profile/photo.jpg);
     width: 300px;
     height: 300px;
     border-radius: 50%;
     background-size: cover;
+    box-shadow: inset 0 0 30px #000
 }
 
-.presents-container .__about {
+.about__container .__about {
     width: 30%;
     padding: 30px;
-    color: #fff;
 }
