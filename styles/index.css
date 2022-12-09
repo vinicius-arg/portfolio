@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --purple: #000000;
+}
+
 * {
-    margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
     color: #fff;
 }
@@ -10,6 +12,28 @@
 body {
     background-color: #000;
     box-shadow: inset 0 0 200px #000000e5;
+    padding: 10px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+section h1 {
+    font-size: 2.5rem;
+}
+
+.x-line {
+    width: 50%;
+    height: 1px;
+    background-color: #fff;
+    margin: 30px;
 }
 
 ::-webkit-scrollbar {
@@ -25,86 +49,93 @@ body {
     border-radius: 5px;
 }
 
-nav {
-    background: #4d236e;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    float: left;
-    margin: 15px 50px;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-li a {
-    text-decoration: none;
-}
-
-.main-bg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+.presents {
+    flex-direction: column;
     background: url(../assets/wallpapers/purple-bg.jpg);
     background-size: cover;
-    z-index: -1;
-    opacity: 0.5;
 }
 
-.presents {
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.presents h1 {
-    font-size: 3rem;
-}
-
-.presents p {
-    font-size: 1.5rem;
-}
-
-.about {
-    height: 600px;
-    background: #4d236e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about__container {
+.presents__container {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
-.about__container .__photo {
+.presents__container .__photo {
     background: url(../assets/profile/photo.jpg);
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     background-size: cover;
-    box-shadow: inset 0 0 30px #000
+    box-shadow: inset 0 0 30px #000;
+    margin: 0 20px;
 }
 
-.about__container .__about {
+.presents__container article {
     width: 30%;
     padding: 30px;
+}
+
+.projects {
+    flex-direction: column;
+    background: #444;
+}
+
+.y-line {
+    background: #000;
+    width: 1px;
+    height: 60%;
+    margin: 0 20px;
+}
+
+.projects article {
+    width: 80%;
+}
+
+.carousel {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.description {
+    width: 50%;
+    margin: 30px;
+}
+
+.description p,
+.description h2 {
+    color: #000;
+}
+
+.card img {
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.links a {
+    color: #000;
+}
+
+.disc {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    margin: 0 10px;
+    border-radius: 50%;
 }
