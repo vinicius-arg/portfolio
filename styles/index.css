@@ -85,8 +85,8 @@ section h1 {
     background: #444;
 }
 
-.y-line {
-    background: #000;
+.card-line {
+    background: #bbb;
     width: 1px;
     height: 60%;
     margin: 0 20px;
@@ -112,6 +112,8 @@ section h1 {
     display: flex;
     align-items: center;
     padding: 0 20px;
+    transform: translateX(0%);
+    transition: 500ms ease-in-out;
 }
 
 .description {
@@ -162,4 +164,5 @@ section h1 {
     border: 1px solid var(--white);
     margin: 0 10px;
     border-radius: 50%; 
+    transition: 250ms ease-in-out;
 }
