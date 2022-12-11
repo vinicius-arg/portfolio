@@ -1,18 +1,39 @@
 const cards = document.querySelectorAll(".card");
-const index = document.querySelector(".controls")
+const index = document.querySelector(".controls");
 
-const carouselLength = cards.length;
+const indexChildren = [...index.children] ;
+
 let pos = 0;
 
 function carousel () {
-    index.children[pos].classList.remove("disc");
-    pos === (carouselLength - 1) ? pos = 0 : pos++;
+    console.log(pos);
+    indexChildren[pos].classList.remove("disc");
+    pos === (cards.length - 1) ? pos = 0 : pos++;
 
-    cards.forEach(elem => {
-        elem.style.transform = `translateX(-${pos*100}%)`;
-    })
+    cards.forEach(element => {
+        element.style.transform = `translateX(-${pos*100}%)`;
+    });
 
-    index.children[pos].classList.add("disc");
+    indexChildren[pos].classList.add("disc");
 }
 
-setInterval(carousel, 10000);
+setInterval(carousel, 8000);
+
+// navigation on cards
+
+indexChildren.forEach(element => {
+    element.addEventListener("click", event => {
+        indexChildren.forEach(element => {
+            element.classList.remove("disc");
+        });
+
+        event.target.classList.add("disc");
+
+        let index = indexChildren.indexOf(event.target);
+        pos = index;
+        
+        cards.forEach(element => {
+            element.style.transform = `translateX(-${pos*100}%)`;
+        });
+    })
+});
