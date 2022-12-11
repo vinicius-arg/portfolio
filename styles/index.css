@@ -3,20 +3,23 @@
 :root {
     --black: #000;
     --white: #fff;
+    --transp-gray: #000000e5;
+    --light-gray: #bbb;
+    --gray: #444;
 }
 
 * {
     font-family: 'Poppins', sans-serif;
-    color: #fff;
+    color: var(--white);
 }
 
 body {
-    background-color: #000;
+    background-color: var(--black);
     padding: 10px;
 }
 
 section {
-    box-shadow: inset 0 0 200px #000000e5;
+    box-shadow: inset 0 0 200px var(--transp-gray);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +37,7 @@ section h1 {
 .x-line {
     width: 50%;
     height: 1px;
-    background-color: #fff;
+    background-color: var(--white);
     margin: 30px;
 }
 
@@ -43,11 +46,11 @@ section h1 {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #000;
+    background-color: var(--black);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #444;
+    background-color: var(--gray);
     border-radius: 5px;
 }
 
@@ -71,7 +74,7 @@ section h1 {
     height: 250px;
     border-radius: 50%;
     background-size: cover;
-    box-shadow: inset 0 0 30px #000;
+    box-shadow: inset 0 0 30px var(--black);
     margin: 0 20px;
 }
 
@@ -82,11 +85,11 @@ section h1 {
 
 .projects {
     flex-direction: column;
-    background: #444;
+    background: var(--gray);
 }
 
 .card-line {
-    background: #bbb;
+    background: var(--light-gray);
     width: 1px;
     height: 60%;
     margin: 0 20px;
@@ -107,7 +110,7 @@ section h1 {
 .card {
     height: 100%;
     width: 100%;
-    background: #fff;
+    background: var(--white);
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -123,7 +126,7 @@ section h1 {
 
 .description p,
 .description h2 {
-    color: #000;
+    color: var(--black);
 }
 
 .card img {
@@ -132,7 +135,7 @@ section h1 {
 }
 
 .links a {
-    color: #000;
+    color: var(--black);
 }
 
 .controls {
@@ -140,6 +143,10 @@ section h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.controls * {
+    cursor: pointer;
 }
 
 .controls .disc {
