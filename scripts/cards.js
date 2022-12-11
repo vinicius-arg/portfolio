@@ -1,3 +1,5 @@
+// deprecated code
+
 const carousel = document.querySelector(".carousel");
 const controls = document.querySelector(".controls");
 

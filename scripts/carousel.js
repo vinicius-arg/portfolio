@@ -4,17 +4,19 @@ const index = document.querySelector(".controls");
 const indexChildren = [...index.children] ;
 
 let pos = 0;
+let pause = false;
 
 function carousel () {
-    console.log(pos);
-    indexChildren[pos].classList.remove("disc");
-    pos === (cards.length - 1) ? pos = 0 : pos++;
+    if (!pause) {
+        indexChildren[pos].classList.remove("disc");
+        pos === (cards.length - 1) ? pos = 0 : pos++;
 
-    cards.forEach(element => {
-        element.style.transform = `translateX(-${pos*100}%)`;
-    });
+        cards.forEach(element => {
+            element.style.transform = `translateX(-${pos*100}%)`;
+        });
 
-    indexChildren[pos].classList.add("disc");
+        indexChildren[pos].classList.add("disc");
+    }
 }
 
 setInterval(carousel, 8000);
@@ -23,6 +25,10 @@ setInterval(carousel, 8000);
 
 indexChildren.forEach(element => {
     element.addEventListener("click", event => {
+        pause = true;
+        setTimeout(() => {
+            pause = false;
+        }, 8000);
         indexChildren.forEach(element => {
             element.classList.remove("disc");
         });
