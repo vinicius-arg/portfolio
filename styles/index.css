@@ -6,6 +6,11 @@
     --transp-gray: #000000e5;
     --light-gray: #bbb;
     --gray: #444;
+    --orange: #ffa500;
+    --yellow: #ffd900;
+    --green: #1fa72a;
+    --dark-green: #004d00;
+    --blue: #2954b1;
 }
 
 * {
@@ -54,6 +59,8 @@ section h1 {
     border-radius: 5px;
 }
 
+/* general */
+
 .presents {
     flex-direction: column;
     background: url(../assets/wallpapers/purple-bg.jpg);
@@ -82,6 +89,8 @@ section h1 {
     width: 30%;
     padding: 30px;
 }
+
+/* presents */
 
 .projects {
     flex-direction: column;
@@ -171,5 +180,56 @@ section h1 {
     border: 1px solid var(--white);
     margin: 0 10px;
     border-radius: 50%; 
-    transition: 250ms ease-in-out;
+    transition: 150ms ease-in-out;
+}
+
+/* cards */
+
+.skills {
+    background: url(../assets/wallpapers/purple-night.jpg);
+    background-size: cover;
+    flex-direction: column;
+}
+
+.skills p {
+    margin: 0;
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+.skills__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-areas: 
+        "a a b"
+        "c d d"
+        "e e f";
+    height: 400px; 
+    width: 80%;
+    margin: 20px;
+}
+
+.a { grid-area: a; background: var(--orange); }
+.b { grid-area: b; background: var(--yellow); }
+.c { grid-area: c; background: var(--green); }
+.d { grid-area: d; background: var(--dark-green); }
+.e { grid-area: e; background: var(--black); }
+.f { grid-area: f; background: var(--blue); }
+
+.skills__container article {
+    padding: 10px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    transition: 50ms ease-in-out;
+}
+
+.skills__container article:hover {
+    outline: 2px solid var(--white);
+    cursor: pointer;
+}
+
+.skills__container article i {
+    font-size: 5rem;
 }
