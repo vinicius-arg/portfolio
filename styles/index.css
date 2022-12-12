@@ -210,7 +210,7 @@ section h1 {
     margin: 20px;
 }
 
-#a { grid-area: a; background: var(--orange); }
+#a { grid-area: a; background: var(--orange);}
 #b { grid-area: b; background: var(--yellow); }
 #c { grid-area: c; background: var(--green); }
 #d { grid-area: d; background: var(--dark-green); }
@@ -223,29 +223,28 @@ section h1 {
     display: flex;
     align-items: center;
     transition: 50ms ease-in-out;
+    position: relative;
 }
 
-.skills__container article:hover {
+.skills__container article .fa-solid {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+}
+
+.visible {
+    display: inline !important;
+}
+
+.--hover-ef:hover {
     outline: 2px solid var(--white);
     cursor: pointer;
 }
 
-.skills__container article i {
+.__skill {
     font-size: 5rem;
     pointer-events: none;
-}
-
-.skills__container--highlighted {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-areas: 
-        "a a a a a"
-        "a a a a a"
-        "a a a a a"
-        "a a a a a"
-        "b c d e f";
-    height: 400px; 
-    width: 80%;
-    margin: 20px;
 }
