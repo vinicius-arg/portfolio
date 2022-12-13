@@ -1,0 +1,73 @@
+.skills {
+    background: url(../../assets/wallpapers/purple-night.jpg);
+    background-size: cover;
+    flex-direction: column;
+}
+
+.skills p {
+    margin: 0;
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+.skills__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-areas: 
+        "a a b"
+        "c d d"
+        "e e f";
+    height: 400px; 
+    width: 80%;
+    margin: 20px;
+    position: relative;
+}
+
+#a { grid-area: a; background: var(--orange);}
+#b { grid-area: b; background: var(--yellow); }
+#c { grid-area: c; background: var(--green); }
+#d { grid-area: d; background: var(--dark-green); }
+#e { grid-area: e; background: var(--black); }
+#f { grid-area: f; background: var(--blue); }
+
+.skills__container article {
+    padding: 10px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    transition: 50ms ease-in-out;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-direction: alternate;
+}
+
+.skills__container .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    cursor: pointer;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    transition: 100ms;
+    animation-duration: 100ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+}
+
+.skills__container .fa-solid:hover {
+    filter: drop-shadow(0 0 5px var(--white));
+}
+
+.--hover-ef:hover {
+    outline: 2px solid var(--white);
+    cursor: pointer;
+}
+
+.__skill {
+    font-size: 5rem;
+    pointer-events: none;
+}
