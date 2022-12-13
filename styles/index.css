@@ -224,6 +224,10 @@ section h1 {
     display: flex;
     align-items: center;
     transition: 50ms ease-in-out;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-direction: alternate;
 }
 
 .skills__container .fa-solid {
@@ -235,13 +239,14 @@ section h1 {
     width: 20px;
     height: 20px;
     transition: 100ms;
-    animation-duration: 200ms;
-    animation-timing-function: ease-in-out;
+    animation-duration: 100ms;
+    animation-timing-function: linear;
     animation-fill-mode: forwards;
+    pointer-events: none;
 }
 
 .skills__container .fa-solid:hover {
-    filter: drop-shadow(0 0 5px white);
+    filter: drop-shadow(0 0 5px var(--white));
 }
 
 .--hover-ef:hover {
@@ -275,5 +280,4 @@ section h1 {
         opacity: 0;
     }
 }
-
 /* animation */
