@@ -1,7 +1,7 @@
 const skillsContainer = document.querySelector(".skills__container");
 const skills = [...skillsContainer.children];
 
-let faIcon;
+const back = document.querySelector(".fa-arrow-left");
 
 skills.forEach(element => {
     element.addEventListener("click", event => {
@@ -10,16 +10,16 @@ skills.forEach(element => {
 
         event.target.classList.remove("--hover-ef");
 
-        if (!faIcon) { 
-            faIcon = document.querySelector(`#${id} .fa-solid`); 
-        }
-
-        faIcon.classList.add("visible");
-        console.log(faIcon);
-
-        animateIcon();
+        back.style.animationName = "fade-in";
     });
 });
+
+back.addEventListener("click", event => {
+    back.style.animationName = "fade-out";
+
+    let gridTemplate = `"a a b""c d d""e e f"`;
+    skillsContainer.style.gridTemplateAreas = gridTemplate;
+})
 
 function highlightSkill (s) {
     let otherSkillsId = [];
@@ -33,30 +33,4 @@ function highlightSkill (s) {
     let gridTemplate = `"${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${otherSkillsStr}"`;
 
     skillsContainer.style.gridTemplateAreas = gridTemplate;
-}
-
-function animateIcon () {
-    if (faIcon.style.opacity === 0) {
-        let i = 0;
-        const interval = 
-        setInterval(() => {
-                i += 0.1;
-                faIcon.style.opacity = i;
-            }, 20);
-    
-        setTimeout(() => {
-            clearInterval(interval);
-        }, 200);
-    } else {
-        let i = 1;
-        const interval = 
-        setInterval(() => {
-                i -= 0.1;
-                faIcon.style.opacity = i;
-            }, 20);
-    
-        setTimeout(() => {
-            clearInterval(interval);
-        }, 200);
-    }
 }
