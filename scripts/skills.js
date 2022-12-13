@@ -10,7 +10,7 @@ skills.forEach(element => {
         let id = event.target.id;
         highlightSkill(id);
 
-        executeTransitions();
+        transitionEffects();
 
         event.target.classList.remove("--hover-ef");
         event.target.style.pointerEvents = "none";
@@ -24,7 +24,7 @@ back.addEventListener("click", () => {
     back.style.animationName = "fade-out";
     back.style.pointerEvents = "none";
 
-    executeTransitions();
+    transitionEffects();
 
     let gridTemplate = `"a a b""c d d""e e f"`;
     gridTemplateAssign(gridTemplate);
@@ -44,11 +44,11 @@ function highlightSkill (s) {
     gridTemplateAssign(gridTemplate);
 }
 
-function resetHoverEf (element) {
+function resetHoverEffects (element) {
     element.classList.add("--hover-ef");
 }
 
-function resetPointerEv (element) {
+function resetPointerEvents (element) {
     element.style.pointerEvents = "auto";
 }
 
@@ -67,8 +67,8 @@ function gridTemplateAssign (template) {
     }, animationTime);
 }
 
-function executeTransitions () {
+function transitionEffects () {
     animateGrid();
-    skills.forEach(resetHoverEf);
-    skills.forEach(resetPointerEv);
+    skills.forEach(resetHoverEffects);
+    skills.forEach(resetPointerEvents);
 }
