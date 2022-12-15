@@ -4,31 +4,51 @@ const back = document.querySelector(".fa-arrow-left");
 
 const skills = [...skillsElements];
 const animationTime = 100;
+let content;
 
 skills.forEach(element => {
     element.addEventListener("click", event => {
         let id = event.target.id;
+        content = document.querySelector(`#${id} .__content`);
         highlightSkill(id);
-
         transitionEffects();
-
-        event.target.classList.remove("--hover-ef");
-        event.target.style.pointerEvents = "none";
-
-        back.style.animationName = "fade-in";
-        back.style.pointerEvents = "auto";
+        disableClick(event.target);
+        fadeIn(back);
+        showContent(content);
     });
 });
 
 back.addEventListener("click", () => {
-    back.style.animationName = "fade-out";
-    back.style.pointerEvents = "none";
-
+    fadeOut(back)
     transitionEffects();
-
     let gridTemplate = `"a a b""c d d""e e f"`;
     gridTemplateAssign(gridTemplate);
 });
+
+function hideContent (content) {
+    content.classList.remove("__content--enabled");
+    fadeOut(content);
+}
+
+function showContent (content) {
+    content.classList.add("__content--enabled");
+    fadeIn(content);
+}
+
+function fadeIn (element) {
+    element.style.animationName = "fade-in";
+    element.style.pointerEvents = "auto";
+}
+
+function fadeOut (element) {
+    element.style.animationName = "fade-out";
+    element.style.pointerEvents = "none";
+}
+
+function disableClick (element) {
+    element.classList.remove("--hover-ef");
+    element.style.pointerEvents = "none";
+}
 
 function highlightSkill (s) {
     let otherSkillsId = [];
@@ -71,4 +91,5 @@ function transitionEffects () {
     animateGrid();
     skills.forEach(resetHoverEffects);
     skills.forEach(resetPointerEvents);
+    hideContent(content);
 }

@@ -71,3 +71,22 @@
     font-size: 5rem;
     pointer-events: none;
 }
+
+.__content {
+    display: none;
+    width: 80%;
+    margin: auto;
+    font-size: 2rem;
+    opacity: 0;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.__content--enabled {
+    display: block !important;
+}
+
+.__content p {
+    color: var(--white);
+}
