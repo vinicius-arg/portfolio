@@ -1,29 +1,42 @@
 const skillsContainer = document.querySelector(".skills__container");
 const skillsElements = document.querySelectorAll(".skills__container article");
 const back = document.querySelector(".fa-arrow-left");
+const contentElements = document.querySelectorAll(".__content");
 
 const skills = [...skillsElements];
+const contents = [...contentElements];
 const animationTime = 100;
-let content;
+let localContent;
 
 skills.forEach(element => {
     element.addEventListener("click", event => {
         let id = event.target.id;
-        content = document.querySelector(`#${id} .__content`);
         highlightSkill(id);
-        transitionEffects();
-        disableClick(event.target);
+        if(localContent) {
+            hideContent(localContent);
+        } // to hide content before get a new context
+        getContentContext(id);
+        transition();
         fadeIn(back);
-        showContent(content);
+        disableClick(event.target);
+        showContent(localContent);
     });
 });
 
 back.addEventListener("click", () => {
     fadeOut(back)
-    transitionEffects();
+    transition();
     let gridTemplate = `"a a b""c d d""e e f"`;
     gridTemplateAssign(gridTemplate);
 });
+
+function getContentContext (id) {
+    contents.forEach(element => {
+            if (element.parentElement.id === id) {
+                localContent = element;
+            }
+        });
+}
 
 function hideContent (content) {
     content.classList.remove("__content--enabled");
@@ -87,9 +100,9 @@ function gridTemplateAssign (template) {
     }, animationTime);
 }
 
-function transitionEffects () {
+function transition () {
     animateGrid();
     skills.forEach(resetHoverEffects);
     skills.forEach(resetPointerEvents);
-    hideContent(content);
+    hideContent(localContent);
 }
