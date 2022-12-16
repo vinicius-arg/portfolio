@@ -24,23 +24,19 @@
     position: relative;
 }
 
-#a { grid-area: a; background: var(--orange);}
-#b { grid-area: b; background: var(--yellow); }
-#c { grid-area: c; background: var(--green); }
-#d { grid-area: d; background: var(--dark-green); }
-#e { grid-area: e; background: var(--black); }
-#f { grid-area: f; background: var(--blue); }
+#html { grid-area: a; background: var(--orange);}
+#js { grid-area: b; background: var(--yellow); }
+#mongodb { grid-area: c; background: var(--green); }
+#nodejs { grid-area: d; background: var(--dark-green); }
+#express { grid-area: e; background: var(--black); }
+#css { grid-area: f; background: var(--blue); }
 
 .skills__container article {
     padding: 10px;
     margin: 4px;
     display: flex;
     align-items: center;
-    transition: 50ms ease-in-out;
-    animation-duration: 200ms;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: backwards;
-    animation-direction: alternate;
+    pointer-events: none;
 }
 
 .skills__container .fa-solid {
@@ -52,19 +48,11 @@
     width: 20px;
     height: 20px;
     transition: 100ms;
-    animation-duration: 100ms;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
     pointer-events: none;
 }
 
 .skills__container .fa-solid:hover {
     filter: drop-shadow(0 0 5px var(--white));
-}
-
-.--hover-ef:hover {
-    outline: 2px solid var(--white);
-    cursor: pointer;
 }
 
 .__skill {
@@ -78,15 +66,9 @@
     margin: auto;
     font-size: 2rem;
     opacity: 0;
-    animation-duration: 300ms;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-}
-
-.__content--enabled {
-    display: block !important;
 }
 
 .__content p {
     color: var(--white);
+    pointer-events: inherit;
 }

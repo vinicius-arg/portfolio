@@ -1,113 +1,88 @@
 const skillsContainer = document.querySelector(".skills__container");
 const skillsElements = document.querySelectorAll(".skills__container article");
-const back = document.querySelector(".fa-arrow-left");
 const contentElements = document.querySelectorAll(".__content");
+const backBtn = document.querySelector(".fa-arrow-left");
 
 const skills = [...skillsElements];
 const contents = [...contentElements];
-const animationTime = 100;
-let localContent = "";
+const animationTime = 300;
 
-skills.forEach(element => {
-    element.addEventListener("click", event => {
-        let id = event.target.id;
-        highlightSkill(id);
-        content.getContext(id);
-        transition();
-        animate.fadeIn(back);
-        disableClick(event.target);
-    });
-});
+let localContent;
 
-back.addEventListener("click", () => {
-    animate.fadeOut(back)
-    transition();
-    let gridTemplate = `"a a b""c d d""e e f"`;
-    gridAssign(gridTemplate);
-});
+const back = {
+    show () {
+        backBtn.classList.add("fa-solid--enabled");
+    },
+    hide () {
+        backBtn.classList.remove("fa-solid--enabled");
+    }
+};
 
 const content = {
     getContext (id) {
-        contents.forEach(element => {
-            if (element.parentElement.id === id) {
-                localContent = element;
+        contents.forEach(elem => {
+            if (elem.parentElement.id === id) {
+                localContent = elem;
             }
         });
     },
     hide (content) {
         content.classList.remove("__content--enabled");
-        animate.fadeOut(content);
     },
    show (content) {
         content.classList.add("__content--enabled");
-        animate.fadeIn(content);
-    }
-}
-
-const animate = {
-    fadeIn (element) {
-        element.style.animationName = "fade-in";
-        element.style.pointerEvents = "auto";
-    },
-    fadeOut (element) {
-        element.style.animationName = "fade-out";
-        element.style.pointerEvents = "none";
-    },
-    grid () {
-        skills.forEach(element => {
-            element.style.animationName = "fade-out";
-            setTimeout(() => {
-                element.style.animationName = "";
-            },200); // to reset animation
-        });
     }
 }
 
 const grid = {
-
-}
-
-function disableClick (element) {
-    element.classList.remove("--hover-ef");
-    element.style.pointerEvents = "none";
-}
-
-function highlightSkill (s) {
-    let otherSkillsId = [];
-    skills.forEach(element => {
-        if (element.id !== s) {
-            otherSkillsId.push(element.id);
-        }
-    });
-
-    let otherSkillsStr = otherSkillsId.join(" ");
-    let gridTemplate = `"${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${otherSkillsStr}"`;
-
-    gridAssign(gridTemplate);
-}
-
-function resetHoverEffects (element) {
-    element.classList.add("--hover-ef");
-}
-
-function resetPointerEvents (element) {
-    element.style.pointerEvents = "auto";
-}
-
-function gridAssign (template) {
-    if(localContent) {
-        content.hide(localContent);
-    } // to hide content before get a new context
-
-    setTimeout(() => {
-        skillsContainer.style.gridTemplateAreas = template;
+    highlightSkill (skill) {
+        skillsContainer.classList.add(`skills__container--highlight-${skill}`);
+        skillsContainer.classList.add("--highlight-model");
         content.show(localContent);
-    }, animationTime); // mudar isso? show content num timeout separado, sim, o erro é aqui
+    },
+    reset () {
+        skills.forEach(elem => {
+            let skill = elem.id;
+            skillsContainer.classList.remove(`skills__container--highlight-${skill}`);
+            elem.classList.add("--hover-ef");
+        })
+        skillsContainer.classList.remove("--highlight-model");
+    },
+    disableClick (elem) {
+        elem.classList.remove("--hover-ef");
+    },
+    animate () {
+        skillsContainer.classList.add("fade-animation--enabled");
+        setTimeout(() => { 
+            skillsContainer.classList.remove("fade-animation--enabled") 
+        }, animationTime*2); // to reset animation, the 2 is for iteration-count synchrony;
+    }
 }
 
-function transition () {
-    animate.grid();
-    skills.forEach(resetHoverEffects);
-    skills.forEach(resetPointerEvents);
-    content.hide(localContent);
-}
+skills.forEach(elem => {
+    elem.addEventListener("click", event => {
+        let id = event.target.id;
+        let elem = event.target;
+
+        grid.animate();
+        setTimeout(() => {
+            if (localContent) content.hide(localContent);
+            grid.reset(); // reset to standart container model;
+
+            content.getContext(id);
+            grid.highlightSkill(id);
+            grid.disableClick(elem);
+           
+            back.show();
+        }, animationTime);
+    });
+});
+
+backBtn.addEventListener("click", () => {
+    grid.animate();
+    setTimeout(() => {
+        content.hide(localContent);
+        grid.reset();
+        back.hide();
+    }, animationTime);
+});

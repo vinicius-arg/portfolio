@@ -44,9 +44,14 @@
     color: var(--black);
 }
 
-.card img {
+.card .img {
+    background-image: url(../../assets/wallpapers/main-wp.jpg);
+    background-size: cover;
+    background-position: center;
     border-radius: 20px;
     margin: 20px;
+    width: 300px;
+    height: 300px;
 }
 
 .links a {
