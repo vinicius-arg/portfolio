@@ -6,56 +6,65 @@ const contentElements = document.querySelectorAll(".__content");
 const skills = [...skillsElements];
 const contents = [...contentElements];
 const animationTime = 100;
-let localContent;
+let localContent = "";
 
 skills.forEach(element => {
     element.addEventListener("click", event => {
         let id = event.target.id;
         highlightSkill(id);
-        if(localContent) {
-            hideContent(localContent);
-        } // to hide content before get a new context
-        getContentContext(id);
+        content.getContext(id);
         transition();
-        fadeIn(back);
+        animate.fadeIn(back);
         disableClick(event.target);
-        showContent(localContent);
     });
 });
 
 back.addEventListener("click", () => {
-    fadeOut(back)
+    animate.fadeOut(back)
     transition();
     let gridTemplate = `"a a b""c d d""e e f"`;
-    gridTemplateAssign(gridTemplate);
+    gridAssign(gridTemplate);
 });
 
-function getContentContext (id) {
-    contents.forEach(element => {
+const content = {
+    getContext (id) {
+        contents.forEach(element => {
             if (element.parentElement.id === id) {
                 localContent = element;
             }
         });
+    },
+    hide (content) {
+        content.classList.remove("__content--enabled");
+        animate.fadeOut(content);
+    },
+   show (content) {
+        content.classList.add("__content--enabled");
+        animate.fadeIn(content);
+    }
 }
 
-function hideContent (content) {
-    content.classList.remove("__content--enabled");
-    fadeOut(content);
+const animate = {
+    fadeIn (element) {
+        element.style.animationName = "fade-in";
+        element.style.pointerEvents = "auto";
+    },
+    fadeOut (element) {
+        element.style.animationName = "fade-out";
+        element.style.pointerEvents = "none";
+    },
+    grid () {
+        skills.forEach(element => {
+            element.style.animationName = "fade-out";
+            setTimeout(() => {
+                element.style.animationName = "";
+            },200); // to reset animation
+        });
+    }
 }
 
-function showContent (content) {
-    content.classList.add("__content--enabled");
-    fadeIn(content);
-}
+const grid = {
 
-function fadeIn (element) {
-    element.style.animationName = "fade-in";
-    element.style.pointerEvents = "auto";
-}
-
-function fadeOut (element) {
-    element.style.animationName = "fade-out";
-    element.style.pointerEvents = "none";
 }
 
 function disableClick (element) {
@@ -74,7 +83,7 @@ function highlightSkill (s) {
     let otherSkillsStr = otherSkillsId.join(" ");
     let gridTemplate = `"${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${s} ${s} ${s} ${s} ${s}""${otherSkillsStr}"`;
 
-    gridTemplateAssign(gridTemplate);
+    gridAssign(gridTemplate);
 }
 
 function resetHoverEffects (element) {
@@ -85,24 +94,20 @@ function resetPointerEvents (element) {
     element.style.pointerEvents = "auto";
 }
 
-function animateGrid () {
-    skills.forEach(element => {
-        element.style.animationName = "fade-out";
-        setTimeout(() => {
-            element.style.animationName = "";
-        },200); // to reset animation
-    });
-}
+function gridAssign (template) {
+    if(localContent) {
+        content.hide(localContent);
+    } // to hide content before get a new context
 
-function gridTemplateAssign (template) {
     setTimeout(() => {
         skillsContainer.style.gridTemplateAreas = template;
-    }, animationTime);
+        content.show(localContent);
+    }, animationTime); // mudar isso? show content num timeout separado, sim, o erro é aqui
 }
 
 function transition () {
-    animateGrid();
+    animate.grid();
     skills.forEach(resetHoverEffects);
     skills.forEach(resetPointerEvents);
-    hideContent(localContent);
+    content.hide(localContent);
 }
