@@ -148,20 +148,23 @@
             <h1>Contato</h1>
             <div class="line"></div>
             <div class="form-container">
-                <form class="contact-form" action="">
+                <form class="contact-form" action="https://api.staticforms.xyz/submit" method="post">
+                    <input type="hidden" name="accessKey" value="81292dde-e97d-4b71-b2cf-24312f239641"> 
+                    <!-- connection to service (https://www.staticforms.xyz/) -->
                     <h3>Quer conversar comigo?</h3>
                     <label for="name">
                         <p>Nome:</p>
-                        <input id="name" type="text" placeholder="Digite seu nome">
+                        <input id="name" type="text" name="name" placeholder="Digite seu nome">
                     </label>
                     <label for="email">
                         <p>E-mail:</p>
-                        <input id="email" type="email" placeholder="example@mail.com">
+                        <input id="email" type="email" name="email" placeholder="example@mail.com">
                     </label>
                     <label for="message">
                         <p>Sua mensagem:</p>
-                        <textarea id="message" rows="5" placeholder="Digite aqui"></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Digite aqui"></textarea>
                     </label>
+                    <input type="text" name="honeypot" style="display: none;"> <!-- spam protection -->
                     <input id="submit" type="submit" value="ENVIAR">
                 </form>
             </div>
