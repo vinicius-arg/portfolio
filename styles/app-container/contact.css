@@ -60,11 +60,14 @@ form.contact-form {
 }
 
 #submit {
+    width: 100%;
     background: var(--purple);
     color: var(--white);
     font-weight: 700;
+    pointer-events: none;
     transition: 200ms;
     border: 0;
+    opacity: .5;
 }
 
 #submit:hover {

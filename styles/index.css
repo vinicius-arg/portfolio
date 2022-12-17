@@ -10,6 +10,7 @@
 
 @import url("./dynamic-classes/skills.js.css");
 @import url("./dynamic-classes/grid.templates.js.css");
+@import url("./dynamic-classes/contact.js.css");
 
 body {
     background-color: var(--black);
