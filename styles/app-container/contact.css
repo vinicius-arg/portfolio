@@ -5,6 +5,13 @@
     background: var(--purple);
 }
 
+.contact__container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .form-container {
     display: flex;
     justify-content: center;
@@ -65,4 +72,38 @@ form.contact-form {
     background: var(--white);
     color: var(--purple);
     cursor: pointer;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.social-media .__links {
+    padding: 0;
+}
+
+.social-media .__links li {
+    list-style: none;
+    margin: 10px;
+}
+
+.__links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.__links p {
+    margin: 0 0 0 10px;
+}
+
+.__links li a:hover i {
+    transform: translateY(-2.5px);
+    filter: drop-shadow(0 0 5px var(--white));
+}
+
+.__links li i {
+    font-size: 2rem;
+    transition: 200ms;
 }
