@@ -6,18 +6,16 @@
 @import url("./app-container/presents.css");
 @import url("./app-container/cards.css");
 @import url("./app-container/skills.css");
+@import url("./app-container/contact.css");
 
 @import url("./dynamic-classes/skills.js.css");
 @import url("./dynamic-classes/grid.templates.js.css");
 
-* {
-    font-family: 'Poppins', sans-serif;
-    color: var(--white);
-}
-
 body {
     background-color: var(--black);
+    color: var(--white);
     padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 section {
@@ -36,10 +34,29 @@ section h1 {
     margin: 0;
 }
 
-.x-line {
+input,
+textarea {
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: 0;
+}
+
+.line {
     width: 50%;
     height: 1px;
-    background-color: var(--white);
+    background: var(--white);
     margin: 30px;
 }
 

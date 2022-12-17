@@ -1,0 +1,68 @@
+@import url("../css-dependences/animation.css");
+
+.contact {
+    flex-direction: column;
+    background: var(--purple);
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+form.contact-form {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 20px 30px;
+    margin: 20px;
+    border-radius: 10px;
+    color: var(--purple);
+}
+
+.contact-form label {
+    width: inherit;
+}
+
+.contact-form p {
+    margin: 0;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 5px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--purple);
+    transition: 100ms;
+    width: inherit;
+}
+
+.contact-form *:focus-visible {
+    animation-name: twinkling-bg;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+#submit {
+    background: var(--purple);
+    color: var(--white);
+    font-weight: 700;
+    transition: 200ms;
+    border: 0;
+}
+
+#submit:hover {
+    filter: drop-shadow(0 0 10px var(--purple));    
+    background: var(--white);
+    color: var(--purple);
+    cursor: pointer;
+}

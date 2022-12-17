@@ -14,7 +14,7 @@
     <main>
         <section class="presents">
             <h1>Hi, I'm Developer</h1>
-            <div class="x-line"></div>
+            <div class="line"></div>
             <div class="presents__container">
                 <div class="__photo">
                 </div>
@@ -28,7 +28,7 @@
 
         <section class="projects">
             <h1>Projetos</h1>
-            <div class="x-line"></div>
+            <div class="line"></div>
             <article>
                 <div class="carousel">
                     <div class="card">
@@ -88,6 +88,7 @@
 
         <section class="skills">
             <h1>Habilidades</h1>
+            <div class="line"></div>
             <p>*Clique em uma tecnologia</p>
             <div class="skills__container">
                 <i class="fa-solid fa-arrow-left fa-lg"></i>
@@ -141,6 +142,30 @@
                 </article>
             </div>
             <script src="./scripts/skills.js"></script>
+        </section>
+
+        <section class="contact">
+            <h1>Contato</h1>
+            <div class="line"></div>
+            <div class="form-container">
+                <form class="contact-form" action="">
+                    <h3>Quer conversar comigo?</h3>
+                    <label for="name">
+                        <p>Nome:</p>
+                        <input id="name" type="text" placeholder="Digite seu nome">
+                    </label>
+                    <label for="email">
+                        <p>E-mail:</p>
+                        <input id="email" type="email" placeholder="example@mail.com">
+                    </label>
+                    <label for="message">
+                        <p>Sua mensagem:</p>
+                        <textarea id="message" rows="5" placeholder="Digite aqui"></textarea>
+                    </label>
+                    <input id="submit" type="submit" value="ENVIAR">
+                </form>
+            </div>
+            <script src="./scripts/form.contact.js"></script>
         </section>
 
         <footer>
