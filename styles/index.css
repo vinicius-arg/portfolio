@@ -12,6 +12,11 @@
 @import url("./dynamic-classes/grid.templates.js.css");
 @import url("./dynamic-classes/contact.js.css");
 
+@import url("./media-queries/media.tablet.css");
+@import url("./media-queries/media.laptop.css");
+@import url("./media-queries/media.phone.css");
+@import url("./media-queries/media.big.desktop.css");
+
 body {
     background-color: var(--black);
     color: var(--white);

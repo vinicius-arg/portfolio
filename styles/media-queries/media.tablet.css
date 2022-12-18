@@ -1,0 +1,23 @@
+@media (max-width: 850px) {
+    div.card .img {
+       width: 250px
+    }
+
+    div.description {
+        width: 30%;
+        text-align: center;
+        font-size: .9rem;
+    }
+
+    .links a {
+        display: block;
+    }
+
+    .links i.disc {
+        display: none;
+    }
+    
+    .__skill {
+        font-size: 4.5rem;
+    }
+}
