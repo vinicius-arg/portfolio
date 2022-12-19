@@ -1,7 +1,8 @@
 .presents {
-    flex-direction: column;
     background: url(../../assets/wallpapers/purple-bg.jpg);
     background-size: cover;
+    background-attachment: fixed;
+    flex-direction: column;
 }
 
 .presents__container {
