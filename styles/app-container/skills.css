@@ -1,7 +1,6 @@
 .skills {
-    background: url(../../assets/wallpapers/purple-night.jpg);
+    background-image: url(../../assets/wallpapers/purple-night.jpg);
     background-size: cover;
-    background-attachment: fixed;
     flex-direction: column;
 }
 

@@ -1,7 +1,6 @@
 .presents {
-    background: url(../../assets/wallpapers/purple-bg.jpg);
+    background-image: url(../../assets/wallpapers/purple-bg.jpg);
     background-size: cover;
-    background-attachment: fixed;
     flex-direction: column;
 }
 
