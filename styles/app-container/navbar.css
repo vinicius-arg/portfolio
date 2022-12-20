@@ -21,10 +21,14 @@ nav ul li {
     margin: 20px;
     font-weight: 200;
     cursor: pointer;
-    transition: 200ms;
 }
 
 nav ul li a {
+    color: var(--white);
+    transition: 200ms;
+}
+
+nav ul li a:hover {
     color: var(--light-gray);
 }
 
