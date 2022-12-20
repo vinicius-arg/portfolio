@@ -1,0 +1,46 @@
+nav {
+    background: #000000a1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 10px var(--black);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: left;
+    margin: 20px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+nav ul li a {
+    color: var(--light-gray);
+}
+
+nav ul li::after {
+    content: "";
+    display: block;
+    background: var(--light-gray);
+    transition: 300ms ease-in-out;
+    height: 1px;
+    width: 0;
+}
+
+nav ul li:hover {
+    color: var(--light-gray);
+}
+
+nav ul li:hover:after {
+    width: 100%;
+}

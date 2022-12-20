@@ -18,11 +18,19 @@
 @import url("./media-queries/media.phone.css");
 @import url("./media-queries/media.big.desktop.css");
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--black);
     color: var(--white);
     padding: 10px;
     font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 section {
