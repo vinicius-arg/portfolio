@@ -12,6 +12,7 @@
 @import url("./dynamic-classes/skills.js.css");
 @import url("./dynamic-classes/grid.templates.js.css");
 @import url("./dynamic-classes/contact.js.css");
+@import url("./dynamic-classes/menu.enabled.js.css");
 
 @import url("./media-queries/media.tablet.css");
 @import url("./media-queries/media.laptop.css");
