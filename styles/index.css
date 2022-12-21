@@ -8,6 +8,7 @@
 @import url("./app-container/cards.css");
 @import url("./app-container/skills.css");
 @import url("./app-container/contact.css");
+@import url("./app-container/footer.css");
 
 @import url("./dynamic-classes/skills.js.css");
 @import url("./dynamic-classes/grid.templates.js.css");
@@ -27,6 +28,8 @@ body {
     background-color: var(--black);
     color: var(--white);
     padding: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -41,7 +44,7 @@ section {
     justify-content: center;
     height: 700px;
     border-radius: 20px;
-    padding: 10px;
+    padding: 20px 10px;
     margin: 0 0 20px 0;
 }
 
@@ -49,7 +52,7 @@ section h1 {
     margin: 0;
     font-size: 2.5rem;
     position: relative;
-    padding-left: 10px;
+    margin-left: 5px;
 }
 
 .title {

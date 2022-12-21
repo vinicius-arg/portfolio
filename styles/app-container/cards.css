@@ -109,9 +109,3 @@
     border-radius: 50%; 
     transition: 150ms ease-in-out;
 }
-
-/* @media (max-width: 1050px) {
-    .card .img {
-       width: 45%;
-    }
-} */

@@ -1,0 +1,31 @@
+footer {
+    background: var(--white);
+    padding: 50px;
+    margin: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer * {
+    color: var(--black);
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer a {
+    transition: 200ms;
+}
+
+footer a:hover {
+    color: var(--light-gray);
+}
+
+footer a:active {
+    color: var(--gray);
+}
