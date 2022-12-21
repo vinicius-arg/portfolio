@@ -4,15 +4,20 @@ const nav = document.querySelector("body nav");
 
 menu.addEventListener("click", () => {
     if (menu.classList.contains("menu--enabled")) {
-        menu.classList.remove("menu--enabled");
-        header.style.height = "70px";
+        removeClasses();
     } else {
-        menu.classList.add("menu--enabled");
-        header.style.height = "275px";
+        addClasses();
     }
 });
 
-nav.addEventListener("click", () => {
+nav.addEventListener("click", removeClasses);
+
+function addClasses () {
+    menu.classList.add("menu--enabled");
+    header.classList.add("header--extended");
+}
+
+function removeClasses () {
     menu.classList.remove("menu--enabled");
-    header.style.height = "70px";
-})
+    header.classList.remove("header--extended");
+}

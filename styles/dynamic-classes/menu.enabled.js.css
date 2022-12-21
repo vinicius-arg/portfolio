@@ -13,3 +13,7 @@
 .menu--enabled span:nth-child(3) {
     transform: rotate(-45deg) translateY(-15px);
 }
+
+body .header--extended {
+    height: 275px;
+}
