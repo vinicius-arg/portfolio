@@ -121,6 +121,11 @@
     .contact__container {
         flex-direction: column;
     }
+
+    body footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @media (max-width: 425px) {

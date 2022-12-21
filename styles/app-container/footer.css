@@ -18,6 +18,11 @@ footer ul {
     list-style: none;
 }
 
+footer p {
+    margin: 0;
+    font-weight: 700;
+}
+
 footer a {
     transition: 200ms;
 }
