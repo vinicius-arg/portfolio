@@ -87,7 +87,7 @@
        position: absolute;
        margin: 0;
        border-radius: 0;
-       filter: brightness(.5);
+       filter: brightness(.35) blur(1px);
        pointer-events: none;
     }
 
@@ -104,6 +104,10 @@
         height: 100%;
         margin: 0;
         padding: 0;
+    }
+
+    div.card .search-system ~ .description > .badges-container img {
+        height: auto;
     }
 
     .__content p {

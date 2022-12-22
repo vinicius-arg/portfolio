@@ -6,6 +6,30 @@ div.card .to-do-list {
     background-position: center;
 }
 
+div.card .snake {
+    background: url("../../assets/projects/snake-game.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div.card .vin-lenses {
+    background: url("../../assets/projects/vin-lenses.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div.card .pdf-reader {
+    background: url("../../assets/projects/pdf.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div.card .search-system {
+    background: url("../../assets/projects/search-system.png");
+    background-size: cover;
+    background-position: center;
+}
+
 /* cards.css */
 
 .projects {
