@@ -19,7 +19,7 @@ div.card .vin-lenses {
 }
 
 div.card .pdf-reader {
-    background: url("../../assets/projects/pdf.png");
+    background: url("../../assets/projects/pdf.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -106,6 +106,15 @@ div.card .search-system {
 
 .links a {
     color: var(--black);
+    transition: 200ms;
+}
+
+.links a:hover {
+    color: var(--light-gray);
+}
+
+.links a:active {
+    color: var(--gray);
 }
 
 .controls {

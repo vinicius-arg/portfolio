@@ -87,7 +87,7 @@
        position: absolute;
        margin: 0;
        border-radius: 0;
-       filter: brightness(.35) blur(1px);
+       filter: brightness(.25);
        pointer-events: none;
     }
 
@@ -99,7 +99,7 @@
 
     div.description {
         position: absolute;
-        font-size: 1rem;
+        font-size: .9rem;
         width: 80%;
         height: 100%;
         margin: 0;
