@@ -1,3 +1,13 @@
+/* card image set */
+
+div.card .to-do-list {
+    background: url("https://vinicius-arg.github.io/to-do-list/assets/images/wallpaper.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* cards.css */
+
 .projects {
     flex-direction: column;
     background: var(--gray);

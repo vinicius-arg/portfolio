@@ -1,7 +1,12 @@
 const cards = document.querySelectorAll(".card");
 const index = document.querySelector(".controls");
 
-const indexChildren = [...index.children] ;
+cards.forEach(() => {
+    index.insertAdjacentHTML("beforeend", "<i class='circle'></i>");
+}); // index according to cards.length
+
+const indexChildren = [...index.children];
+index.children[0].classList.add("disc"); // to start the animations with 1st card
 
 let pos = 0;
 let pause = false;
