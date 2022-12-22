@@ -56,6 +56,16 @@ const grid = {
         setTimeout(() => { 
             skillsContainer.classList.remove("fade-animation--enabled") 
         }, animationTime*2); // to reset animation, the 2 is for iteration-count synchrony;
+    },
+    justify () {
+        skills.forEach(elem => {
+            elem.classList.add("justify--enabled");
+        });
+    },
+    removeJustify() {
+        skills.forEach(elem => {
+            elem.classList.remove("justify--enabled");
+        });
     }
 }
 
@@ -72,7 +82,7 @@ skills.forEach(elem => {
             content.getContext(id);
             grid.highlightSkill(id);
             grid.disableClick(elem);
-           
+            grid.justify();
             back.show();
         }, animationTime);
     });
@@ -83,6 +93,7 @@ backBtn.addEventListener("click", () => {
     setTimeout(() => {
         content.hide(localContent);
         grid.reset();
+        grid.removeJustify();
         back.hide();
     }, animationTime);
 });

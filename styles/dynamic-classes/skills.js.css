@@ -17,6 +17,10 @@ article.--hover-ef:hover {
     cursor: pointer;
 }
 
+.skills__container article.justify--enabled {
+    justify-content: center;
+}
+
 .fade-animation--enabled {
     animation-name: fade;
     animation-duration: 300ms;
