@@ -1,0 +1,12 @@
+div.skills__container--highlighted-mobile {
+    display: flex;
+}
+
+div.skills__container--highlighted-mobile article {
+    width: 100%;
+    height: 100%;
+} 
+
+article.--disabled {
+    display: none;
+}

@@ -36,14 +36,25 @@ const content = {
 
 const grid = {
     highlightSkill (skill) {
-        skillsContainer.classList.add(`skills__container--highlight-${skill}`);
-        skillsContainer.classList.add("--highlight-model");
-        content.show(localContent);
+        if (window.innerWidth <= 700) {
+            skillsContainer.classList.add("skills__container--highlighted-mobile");
+            skills.forEach(elem => {
+                if (elem.id !== skill) {
+                    elem.classList.add("--disabled");
+                }
+            }); // functionalities for mobile
+        } else {
+            skillsContainer.classList.add(`skills__container--highlight-${skill}`);
+            skillsContainer.classList.add("--highlight-model");
+        }
     },
     reset () {
         skills.forEach(elem => {
             let skill = elem.id;
             skillsContainer.classList.remove(`skills__container--highlight-${skill}`);
+            skillsContainer.classList.remove("skills__container--highlighted-mobile"); // functionalities for mobile
+            elem.classList.remove("--disabled"); // functionalities for mobile
+
             elem.classList.add("--hover-ef");
         })
         skillsContainer.classList.remove("--highlight-model");
@@ -81,6 +92,7 @@ skills.forEach(elem => {
 
             content.getContext(id);
             grid.highlightSkill(id);
+            content.show(localContent);
             grid.disableClick(elem);
             grid.justify();
             back.show();
@@ -96,4 +108,11 @@ backBtn.addEventListener("click", () => {
         grid.removeJustify();
         back.hide();
     }, animationTime);
+});
+
+window.addEventListener("resize", () => {
+    content.hide(localContent);
+    grid.reset();
+    grid.removeJustify();
+    back.hide();
 });
