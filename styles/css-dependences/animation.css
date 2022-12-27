@@ -13,3 +13,33 @@
         filter: drop-shadow(0 0 5px #bbb);
     }
 }
+
+@keyframes wave {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    10% {
+        transform: rotate(-22.5deg);
+    }
+
+    18% {
+        transform: rotate(22.5deg);
+    }
+
+    26% {
+        transform: rotate(-22.5deg);
+    }
+
+    34% {
+        transform: rotate(22.5deg);
+    }
+
+    42% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
