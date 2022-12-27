@@ -1,4 +1,8 @@
 @media (max-width: 1050px) {
+    .presents__container article {
+        width: 50%;
+    }
+
     .card .img {
        width: 45%;
     }
