@@ -1,5 +1,6 @@
 const stCardImg = document.querySelector(".card .img");
 const stCardDescription = document.querySelector(".description");
+const navItems = document.querySelectorAll("nav ul li");
 
 ScrollReveal({
     delay: 600,
@@ -9,6 +10,22 @@ ScrollReveal({
         elem.removeAttribute("style");
     } // to reset inputed scroll reveals 
 }); // default configs
+
+ScrollReveal().reveal(navItems[0] , {
+    delay: 400 
+});
+
+ScrollReveal().reveal(navItems[1] , {
+    delay: 500 
+});
+
+ScrollReveal().reveal(navItems[2] , {
+    delay: 600 
+});
+
+ScrollReveal().reveal(navItems[3] , {
+    delay: 700 
+});
 
 ScrollReveal().reveal("section", { 
     delay: 300, 

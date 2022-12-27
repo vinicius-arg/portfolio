@@ -15,6 +15,7 @@ nav.addEventListener("click", removeClasses);
 function addClasses () {
     menu.classList.add("menu--enabled");
     header.classList.add("header--extended");
+    header.classList.add("header-visible");
 }
 
 function removeClasses () {
