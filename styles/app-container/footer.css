@@ -22,15 +22,3 @@ footer p {
     margin: 0;
     font-weight: 700;
 }
-
-footer a {
-    transition: 200ms;
-}
-
-footer a:hover {
-    color: var(--light-gray);
-}
-
-footer a:active {
-    color: var(--gray);
-}

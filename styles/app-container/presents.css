@@ -3,6 +3,7 @@
     background-size: cover;
     flex-direction: column;
     margin-top: 50px;
+    height: 650px;
 }
 
 .presents__container {
@@ -25,7 +26,7 @@
 
 .presents__container article {
     width: 30%;
-    padding: 30px;
+    padding: 0 30px;
     text-align: center;
 }
 

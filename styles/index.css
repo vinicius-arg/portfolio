@@ -36,6 +36,15 @@ body {
 
 a {
     text-decoration: none;
+    transition: 200ms;
+}
+
+a:hover {
+    color: var(--light-gray);
+}
+
+a:active {
+    color: var(--gray);
 }
 
 section {
@@ -54,6 +63,14 @@ section h1 {
     font-size: 2.5rem;
     position: relative;
     margin-left: 5px;
+}
+
+section > p {
+    margin: 0;
+    padding: 0 20px;
+    color: var(--light-gray);
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 .title {

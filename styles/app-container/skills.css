@@ -4,12 +4,6 @@
     flex-direction: column;
 }
 
-.skills p {
-    margin: 0;
-    color: var(--light-gray);
-    font-size: 0.9rem;
-}
-
 .skills__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 

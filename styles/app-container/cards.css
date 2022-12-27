@@ -37,6 +37,10 @@ div.card .search-system {
     background: var(--gray);
 }
 
+.projects a {
+    color: var(--white);
+}
+
 .card-line {
     background: var(--light-gray);
     width: 1px;

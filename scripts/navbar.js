@@ -1,7 +1,16 @@
 document.addEventListener("scroll", () => {
     if (window.scrollY >= 50) {
-        header.classList.add("header-visible");
+        hideHeader();
     } else {
-        header.classList.remove("header-visible");
+        showHeader();
     }
 });
+
+function hideHeader () {
+    header.classList.add("header-visible");
+}
+
+function showHeader () {
+    header.classList.remove("header-visible");
+    removeClasses();
+}
