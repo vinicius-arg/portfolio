@@ -15,31 +15,15 @@
 }
 
 @keyframes wave {
-    0% {
+    0%, 42%, 100% {
         transform: rotate(-10deg);
     }
 
-    10% {
+    10%, 26% {
         transform: rotate(-22.5deg);
     }
 
-    18% {
+    18%, 34% {
         transform: rotate(22.5deg);
-    }
-
-    26% {
-        transform: rotate(-22.5deg);
-    }
-
-    34% {
-        transform: rotate(22.5deg);
-    }
-
-    42% {
-        transform: rotate(-10deg);
-    }
-
-    100% {
-        transform: rotate(-10deg);
     }
 }
