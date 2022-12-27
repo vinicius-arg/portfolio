@@ -27,10 +27,14 @@ const content = {
         });
     },
     hide (content) {
-        content.classList.remove("__content--enabled");
+        if (content) {
+            content.classList.remove("__content--enabled");
+        }
     },
    show (content) {
-        content.classList.add("__content--enabled");
+        if (content) {
+            content.classList.add("__content--enabled");
+        }
     }
 }
 
