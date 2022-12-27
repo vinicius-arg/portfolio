@@ -69,6 +69,26 @@
 
     .carousel {
         height: 330px;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .controls {
+        background: var(--white);
+        height: 20px;
+        margin: 0 0 20px 0;
+        padding: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .controls .disc {
+        background: var(--black);
+    }
+
+    .controls .circle {
+        border-color: var(--black);
     }
     
     div.card {
@@ -105,7 +125,8 @@
         padding: 0;
     }
 
-    div.card .search-system ~ .description > .badges-container img {
+    div.card .search-system ~ .description > 
+    .badges-container img {
         height: auto;
     }
 
