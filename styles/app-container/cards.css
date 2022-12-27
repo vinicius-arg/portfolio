@@ -32,12 +32,12 @@ div.card .search-system {
 
 /* cards.css */
 
-.projects {
+#projects {
     flex-direction: column;
     background: var(--gray);
 }
 
-.projects a {
+#projects > p > a {
     color: var(--white);
 }
 
@@ -48,7 +48,7 @@ div.card .search-system {
     margin: 0 20px;
 }
 
-.projects article {
+#projects article {
     width: 80%;
 }
 

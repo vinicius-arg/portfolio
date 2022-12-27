@@ -48,13 +48,13 @@
         display: none;
     }
 
-    .presents,
-    .contact {
+    #presents,
+    #contact {
         height: auto;
         padding: 60px 0;
     }
 
-    .presents h1 {
+    #presents h1 {
         text-align: center;
     }
 

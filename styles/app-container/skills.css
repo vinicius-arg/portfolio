@@ -1,4 +1,4 @@
-.skills {
+#skills {
     background-image: url(../../assets/wallpapers/purple-night.jpg);
     background-size: cover;
     flex-direction: column;
@@ -60,7 +60,7 @@
     width: 50%;
     margin: 0 20px;
     opacity: 0;
-    text-align: justify;
+    text-align: center;
 }
 
 .__content p {

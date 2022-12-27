@@ -1,9 +1,9 @@
-.skills .--highlight-model {
+#skills .--highlight-model {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.skills .skills__container--highlight-html {
+#skills .skills__container--highlight-html {
     grid-template-areas: 
         "a a a a a"
         "a a a a a"
@@ -12,7 +12,7 @@
         "b c d e f";
 }
 
-.skills .skills__container--highlight-js {
+#skills .skills__container--highlight-js {
     grid-template-areas: 
         "b b b b b"
         "b b b b b" 
@@ -21,7 +21,7 @@
         "a c d e f";
 }
 
-.skills .skills__container--highlight-mongodb {
+#skills .skills__container--highlight-mongodb {
     grid-template-areas: 
         "c c c c c"
         "c c c c c"
@@ -30,7 +30,7 @@
         "a b d e f";
 }
 
-.skills .skills__container--highlight-nodejs {
+#skills .skills__container--highlight-nodejs {
     grid-template-areas: 
         "d d d d d"
         "d d d d d"
@@ -39,7 +39,7 @@
         "a b c e f";
 }
 
-.skills .skills__container--highlight-express {
+#skills .skills__container--highlight-express {
     grid-template-areas: 
         "e e e e e"
         "e e e e e"
@@ -48,7 +48,7 @@
         "a b c d f";
 }
 
-.skills .skills__container--highlight-css {
+#skills .skills__container--highlight-css {
     grid-template-areas: 
         "f f f f f"
         "f f f f f"
